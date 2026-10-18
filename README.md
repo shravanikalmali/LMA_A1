@@ -50,7 +50,7 @@ results/     rank_shifts.json, latency.json  # saved experiment outputs
 | Q4 | Buried chunk (sell order) | 5 → 3 | Re-rank fixes |
 | Q5 | Honest counter-example | 2 → 4 | **Re-rank hurts** |
 
-Latency (this machine): retrieval ≈ 3.5 ms, re-rank ≈ 15 ms (~4.3× retrieval);
+Latency (this machine, 30 samples): retrieval ≈ 3.3 ms, re-rank ≈ 14.9 ms (~4.5× retrieval);
 LLM generation is network-bound and dominates.
 
 See [`docs/`](docs) for the full reasoning behind every decision and

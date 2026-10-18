@@ -61,14 +61,17 @@ more dangerous failure mode a weaker prompt would expose.
 
 ## 3. Latency profiling
 
-Measured on this machine (see `results/latency.json`; re-run the notebook for your
-own numbers). Averaged over the 5 queries, excluding a warm-up pass:
+Measured on this machine over **30 samples** (6 measured passes × 5 queries, 2
+warm-up passes discarded; see `results/latency.json`, reproduced by the notebook's
+latency cell). Re-run for your own numbers — retrieval wobbles ~3.1–3.3 ms
+run-to-run, the re-rank figure is stable:
 
 | Stage | Mean time | Notes |
 |---|---:|---|
-| Bi-Encoder retrieval (encode query + search 42-chunk index, return 10) | **~3.5 ms** | Dominated by query encoding; FAISS search is negligible at this size. |
-| Cross-Encoder re-rank (score 10 query–chunk pairs) | **~15 ms** | ~**4.3×** the retrieval cost, for just 10 candidates. |
-| LLM generation (Gemini, per answer) | **~4–15 s** (network-bound) | Measured live; by far the dominant term — ~300–1000× retrieval+rerank. |
+| Bi-Encoder retrieval (encode query + search 42-chunk index, return 10) | **~3.3 ms** | Dominated by query encoding; FAISS search is negligible at this size. |
+| Cross-Encoder re-rank (score 10 query–chunk pairs) | **~14.9 ms** | ~**4.5×** the retrieval cost, for just 10 candidates. |
+| Two-stage total (retrieve + re-rank) | **~18.2 ms** | ~**5.5×** the baseline retrieval-only pipeline. |
+| LLM generation (Gemini, per answer) | **~4–15 s** (network-bound) | Measured live; by far the dominant term — ~hundreds× retrieval+rerank. |
 
 Key observation: re-ranking adds a **fixed, modest** overhead that grows with the
 number of candidates re-scored (here 10). Generation latency dwarfs both, so in
