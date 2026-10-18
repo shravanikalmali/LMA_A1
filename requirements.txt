@@ -1,0 +1,10 @@
+# Core RAG assignment dependencies
+# Install with:  pip install -r requirements.txt
+
+pymupdf>=1.24           # PDF text extraction (imported as `fitz`)
+sentence-transformers>=3.0  # Bi-Encoder (embeddings) + Cross-Encoder (re-ranker)
+faiss-cpu>=1.8          # Vector store / nearest-neighbour search
+numpy>=1.26
+pandas>=2.0            # Result tables
+google-generativeai>=0.7  # Gemini API for answer generation
+python-dotenv>=1.0     # Load GEMINI_API_KEY from a local .env file

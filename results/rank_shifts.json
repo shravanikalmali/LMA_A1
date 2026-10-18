@@ -1,0 +1,52 @@
+{
+  "Q1": {
+    "query": "How large is the jackpot paid out to a player who lands on Free Parking?",
+    "category": "Keyword Trap / Distractor",
+    "gold_phrase": "does not receive any money",
+    "bi_rank": 5,
+    "ce_rank": 1,
+    "in_baseline_top3": false,
+    "in_reranked_top3": true,
+    "verdict": "RERANK FIXES"
+  },
+  "Q2": {
+    "query": "Explain the rent payment rules for a property that has been mortgaged to the Bank.",
+    "category": "Negation / Constraint",
+    "gold_phrase": "no rent can be collected",
+    "bi_rank": 4,
+    "ce_rank": 1,
+    "in_baseline_top3": false,
+    "in_reranked_top3": true,
+    "verdict": "RERANK FIXES"
+  },
+  "Q3": {
+    "query": "Can I sell a property to another player while it has houses on it?",
+    "category": "Exception / Corner Case",
+    "gold_phrase": "no property can be sold",
+    "bi_rank": 4,
+    "ce_rank": 1,
+    "in_baseline_top3": false,
+    "in_reranked_top3": true,
+    "verdict": "RERANK FIXES"
+  },
+  "Q4": {
+    "query": "In what order must houses be removed when I sell buildings back to the Bank?",
+    "category": "Buried Relevant Chunk",
+    "gold_phrase": "sold one by one",
+    "bi_rank": 5,
+    "ce_rank": 3,
+    "in_baseline_top3": false,
+    "in_reranked_top3": true,
+    "verdict": "RERANK FIXES"
+  },
+  "Q5": {
+    "query": "I rolled a normal number and stopped on the Jail square; do I owe any fine?",
+    "category": "Honest Counter-Example (re-ranking hurts)",
+    "gold_phrase": "incur no penalty",
+    "bi_rank": 2,
+    "ce_rank": 4,
+    "in_baseline_top3": true,
+    "in_reranked_top3": false,
+    "verdict": "RERANK HURTS"
+  }
+}
