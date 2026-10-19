@@ -39,16 +39,4 @@ results/     rank_shifts.json, latency.json, run_results.json, hallucination_dem
 requirements.txt, README.md, .env.example   # deps, this file, API-key template
 ```
 
-## Headline results (5 stress-test queries)
-
-| Query | Failure type | Gold rank Bi → CE | Verdict |
-|---|---|:---:|---|
-| Q1 | Keyword trap (Free Parking) | 5 → 1 | Re-rank fixes |
-| Q2 | Negation (mortgaged rent) | 4 → 1 | Re-rank fixes |
-| Q3 | Exception (sell with buildings) | 4 → 1 | Re-rank fixes |
-| Q4 | Buried chunk (sell order) | 5 → 3 | Re-rank fixes |
-| Q5 | Honest counter-example | 2 → 4 | **Re-rank hurts** |
-
-Latency (this machine, 30 samples): retrieval ≈ 2.9 ms, re-rank ≈ 14.6 ms (~5× retrieval);
-LLM generation is network-bound and dominates.
 
