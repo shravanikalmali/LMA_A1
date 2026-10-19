@@ -1,0 +1,7 @@
+{
+  "query": "How large is the jackpot paid out to a player who lands on Free Parking?",
+  "prompt_variant": "ungrounded (no abstain instruction)",
+  "baseline_answer_ungrounded": "Based on the provided context, there is no mention of \"Free Parking\" or any jackpot paid for landing on it.",
+  "baseline_answer_permissive": "According to the official rules of Monopoly, **there is no jackpot** paid out when landing on Free Parking. \n\nFree Parking is simply a safe \"resting\" space where nothing happens\u2014a player receives no money, properties, or rewards of any kind for landing there. \n\n*(Note: Collecting taxes, fees, or a jackpot on Free Parking is a very common \"house rule,\" but it is not part of the official Monopoly rules!)*",
+  "note": "Ungrounded+strict still abstains (robust model); permissive/outside-knowledge triggers the Free Parking house-rule hallucination."
+}

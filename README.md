@@ -12,7 +12,7 @@ re-ranking actually improves the LLM's answer.
 ```bash
 pip install -r requirements.txt            # PyMuPDF, sentence-transformers, faiss-cpu, google-generativeai, ...
 cp .env.example .env                       # then paste your GEMINI_API_KEY into .env
-jupyter notebook notebooks/RAG_Baseline_vs_Reranking.ipynb
+jupyter notebook notebooks/rag.ipynb
 ```
 
 Run the notebook top-to-bottom. The Bi-Encoder and Cross-Encoder run locally;
@@ -28,16 +28,15 @@ generation cell runs without a key.
 | Bi-Encoder | `sentence-transformers/all-MiniLM-L6-v2` |
 | Vector store | FAISS `IndexFlatIP` (cosine via normalised inner product) |
 | Cross-Encoder | `cross-encoder/ms-marco-MiniLM-L-6-v2` |
-| LLM | Gemini `gemini-2.0-flash` |
+| LLM | Gemini `gemini-3.5-flash` |
 
 ## Layout
 
 ```
 data/        monopoly_rules.pdf              # corpus (official Hasbro rulebook)
-src/         modular pipeline code (config, pdf_processing, retrieval, reranker, generation, pipeline, queries)
-notebooks/   RAG_Baseline_vs_Reranking.ipynb # the single submission notebook (orchestration)
-docs/        00..05_*.md                     # per-stage explanations of every decision
-results/     rank_shifts.json, latency.json  # saved experiment outputs
+notebooks/   rag.ipynb                       # the single self-contained submission notebook (all code + explanations inline)
+results/     rank_shifts.json, latency.json, run_results.json, hallucination_demo.json   # saved experiment outputs
+requirements.txt, README.md, .env.example   # deps, this file, API-key template
 ```
 
 ## Headline results (5 stress-test queries)
@@ -50,9 +49,6 @@ results/     rank_shifts.json, latency.json  # saved experiment outputs
 | Q4 | Buried chunk (sell order) | 5 → 3 | Re-rank fixes |
 | Q5 | Honest counter-example | 2 → 4 | **Re-rank hurts** |
 
-Latency (this machine, 30 samples): retrieval ≈ 3.3 ms, re-rank ≈ 14.9 ms (~4.5× retrieval);
+Latency (this machine, 30 samples): retrieval ≈ 2.9 ms, re-rank ≈ 14.6 ms (~5× retrieval);
 LLM generation is network-bound and dominates.
 
-See [`docs/`](docs) for the full reasoning behind every decision and
-[`docs/05_report_findings.md`](docs/05_report_findings.md) for the report notes
-(to be rewritten in your own words — the report must not be AI-generated).

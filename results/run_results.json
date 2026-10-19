@@ -4,10 +4,8 @@
     "answer_baseline": "The provided rules do not specify this.",
     "answer_reranked": "Based on the provided rules, there\n is no jackpot. A player landing on Free Parking \"does not receive any money, property or reward of any kind,\" as it is just a \"free\" resting place.",
     "timings": {
-      "retrieve_s": 0.004472105999411724,
-      "rerank_s": 0.01746008999998594,
-      "baseline_pipeline_s": 0.004472105999411724,
-      "rerank_pipeline_s": 0.021932195999397663
+      "retrieve_s": 0.005059475000962266,
+      "rerank_s": 0.017908814999827882
     }
   },
   "Q2": {
@@ -15,10 +13,8 @@
     "answer_baseline": "The provided rules do not specify this.",
     "answer_reranked": "Based on the provided rules, no rent can be collected on mortgaged properties or utilities. However, rent can still be collected on unmortgaged properties in the same color-group.",
     "timings": {
-      "retrieve_s": 0.003297606000160158,
-      "rerank_s": 0.01676154799952201,
-      "baseline_pipeline_s": 0.003297606000160158,
-      "rerank_pipeline_s": 0.020059153999682167
+      "retrieve_s": 0.0032722799987823237,
+      "rerank_s": 0.016552293000131613
     }
   },
   "Q3": {
@@ -26,10 +22,8 @@
     "answer_baseline": "The provided rules do not specify this.",
     "answer_reranked": "No. According to the provided rules, no property can be sold to another player if buildings are standing on any properties of that color-group. All buildings located on properties of that color-group must be sold back to the Bank before you can sell any property of that color-group to another player.",
     "timings": {
-      "retrieve_s": 0.0034996169997612014,
-      "rerank_s": 0.017346249999718566,
-      "baseline_pipeline_s": 0.0034996169997612014,
-      "rerank_pipeline_s": 0.020845866999479767
+      "retrieve_s": 0.003415749000851065,
+      "rerank_s": 0.01621974199952092
     }
   },
   "Q4": {
@@ -37,10 +31,8 @@
     "answer_baseline": "Based on the provided rules, houses must be removed in the reverse of the manner in which they were erected.",
     "answer_reranked": "Based on the provided rules, all houses on one color-group must be sold one by one, evenly, in reverse of the manner in which they were erected.",
     "timings": {
-      "retrieve_s": 0.003121077999821864,
-      "rerank_s": 0.016724291000173253,
-      "baseline_pipeline_s": 0.003121077999821864,
-      "rerank_pipeline_s": 0.019845368999995117
+      "retrieve_s": 0.00283688799936499,
+      "rerank_s": 0.016293241998937447
     }
   },
   "Q5": {
@@ -48,10 +40,8 @@
     "answer_baseline": "No. If you land on the Jail space in the ordinary course of play (and are not \"sent\" to Jail), you are \"Just Visiting\" and incur no penalty.",
     "answer_reranked": "The provided rules do not specify this.",
     "timings": {
-      "retrieve_s": 0.0032635520001349505,
-      "rerank_s": 0.01771003700014262,
-      "baseline_pipeline_s": 0.0032635520001349505,
-      "rerank_pipeline_s": 0.02097358900027757
+      "retrieve_s": 0.0031484840001212433,
+      "rerank_s": 0.017825255999923684
     }
   }
 }
